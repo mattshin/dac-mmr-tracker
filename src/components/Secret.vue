@@ -1,12 +1,12 @@
 <template>
-  <div class="hello">
+  <div class="key-display">
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Key Display',
   data () {
     return {
       msg: 'Your key is: ' + process.env.API_KEY

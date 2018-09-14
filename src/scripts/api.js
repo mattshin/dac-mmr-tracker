@@ -1,11 +1,11 @@
-const API_ENDPOINT = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/RiotSchmick?api_key=' + process.env.API_KEY
+import ky from 'ky'
+
+const STEAM_USER_ENDPOINT = (username) => {
+  return `http://api.steampowered.com/<interface name>/<method name>/v<version>/?key=<api key>&format=<format>` + process.env.API_KEY
+}
 
 export default {
-  getSummonerIDs: function (summonerNames) {
-    return summonerNames
+  getSteamIds: function (usernames) {
+    return usernames
   },
-
-  getSummonerMMRs: function (summonerIDs) {
-    return summonerIDs
-  }
 }

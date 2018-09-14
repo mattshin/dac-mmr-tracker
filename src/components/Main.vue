@@ -6,13 +6,13 @@
       v-model="textInput"
       class="textarea-big"
       rows="5"
-      placeholder="Enter all summoner names, each on a new line"/>
+      placeholder="Enter all Steam usernames, each on a new line"/>
     <button
       class="button-find"
-      @click="getSummonersByName">Find</button>
+      @click="getSteamIdsByUsername">Find</button>
     <graph
-      v-if="summonerList.length && summonerList[0]"
-      :ids="summonerIds"/>
+      v-if="usernameList.length && usernameList[0]"
+      :ids="steamIds"/>
   </div>
 </template>
 
@@ -26,18 +26,18 @@ export default {
   },
   data () {
     return {
-      title: 'MMR Tracker',
+      title: 'Rank Tracker',
 
       // Reactive Elements
-      summonerList: [],
+      usernameList: [],
       textInput: '',
     }
   },
 
   methods: {
-    getSummonersByName: function(event) {
-      this.summonerList = this.textInput.split('\n')
-      this.summonerIds = api.getSummonerIDs(this.summonerList)
+    getSteamIdsByUsername: function(event) {
+      this.usernameList = this.textInput.split('\n')
+      this.steamIds = api.getSteamIds(this.usernameList)
     }
   }
 }

@@ -1,6 +1,5 @@
-# lol-mmr-tracker
-Vue.js web application to track and compare League of Legends MMR within a group of friends
+# dac-mmr-tracker
+Vue.js web application to track and compare AutoChess Rank within a group of friends
 
 ## Development
-Get an api key [here](https://developer.riotgames.com/) and save it to the variable `API-KEY` in a file called `.env` in the project root.
-
+Get an API key from https://steamcommunity.com/dev/apikey and provide as the environment variable API_KEY.

@@ -1,7 +1,7 @@
 {
-  "name": "lol-mmr-tracker",
+  "name": "dac-mmr-tracker",
   "version": "1.0.0",
-  "description": "Vue.js web app to track and compare League of Legends MMR amongst friends",
+  "description": "Vue.js web app to track and compare AutoChess Rank amongst friends",
   "author": "mattshin",
   "private": true,
   "scripts": {
