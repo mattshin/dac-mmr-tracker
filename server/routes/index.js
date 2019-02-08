@@ -4,7 +4,7 @@ const getSteamIdEndpoint = (username, apiKey) => {
 }
 
 const getDacEndpoint = (steamId) => {
-    return `http://101.200.189.65:431/dac/heros/get/@${steamId}`
+    return `http://101.200.189.65:431/dac/ranking/get/?player_ids=${steamId}`
 }
 
 module.exports = (app) => {
@@ -24,8 +24,9 @@ module.exports = (app) => {
         got(getSteamIdEndpoint(username, apiKey)).then(steamRes => {
             const steamId = JSON.parse(steamRes.body).response.steamid
             got(getDacEndpoint(steamId)).then(dacRes => {
-                const userRank = JSON.parse(dacRes.body).user_info[steamId].mmr_level
-                res.json({ 'rank': userRank })
+		console.log(dacRes.body)
+                const rankInfo = JSON.parse(dacRes.body).ranking_info[0]
+                res.json({ 'division': rankInfo.mmr_level, 'rating': rankInfo.score })
             }).catch(err => {
                 res.status(400, err)
             })
