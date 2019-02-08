@@ -15,6 +15,8 @@ module.exports = (app) => {
     app.get('/getDacRank/:username', (req, res) => {
         const username = req.params.username
         const apiKey = req.query.key
+	console.log(`GET with username:${username} and key:${apiKey}`)
+
         if (apiKey) {
             res.status(400, 'Need API Key')
         }
